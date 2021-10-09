@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -151,23 +152,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v77-3c-8Cq">
-                                <rect key="frame" x="186" y="96" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v77-3c-8Cq">
+                                <rect key="frame" x="10" y="54" width="394" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="P8n-Um-5GB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="31"/>
+                                <color key="textColor" name="AccentColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jrq-Ku-Kgc">
-                                <rect key="frame" x="186" y="165" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jrq-Ku-Kgc">
+                                <rect key="frame" x="10" y="102" width="394" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="q7u-F6-X9p"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="v77-3c-8Cq" firstAttribute="leading" secondItem="q7u-F6-X9p" secondAttribute="leading" constant="10" id="Bt7-Hl-106"/>
+                            <constraint firstItem="Jrq-Ku-Kgc" firstAttribute="top" secondItem="v77-3c-8Cq" secondAttribute="bottom" constant="20" id="Kp9-2H-Z0Z"/>
+                            <constraint firstItem="v77-3c-8Cq" firstAttribute="top" secondItem="q7u-F6-X9p" secondAttribute="top" constant="10" id="U7y-Fa-lz8"/>
+                            <constraint firstItem="Jrq-Ku-Kgc" firstAttribute="leading" secondItem="q7u-F6-X9p" secondAttribute="leading" constant="10" id="g3W-q3-rfA"/>
+                            <constraint firstItem="q7u-F6-X9p" firstAttribute="trailing" secondItem="v77-3c-8Cq" secondAttribute="trailing" constant="10" id="iLD-og-diQ"/>
+                            <constraint firstItem="q7u-F6-X9p" firstAttribute="trailing" secondItem="Jrq-Ku-Kgc" secondAttribute="trailing" constant="10" id="yfl-LP-peq"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="descrLabel" destination="Jrq-Ku-Kgc" id="mou-FB-zrm"/>
@@ -180,6 +190,9 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
