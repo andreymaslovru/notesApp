@@ -17,6 +17,7 @@ class EntryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(didTapeSave))
+        textField.placeholder = "Type the title of the note... "
     }
     
     @objc func didTapeSave() {

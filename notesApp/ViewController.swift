@@ -17,6 +17,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBAction func didTapeAddItem(_ sender: Any) {
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "new") as? EntryViewController else { return }
         vc.title = "New Note"
+        vc.navigationItem.largeTitleDisplayMode = .never
+        vc.completion = {textField, note in
+            self.navigationController?.popToRootViewController(animated: true)
+            self.models.append((title: textField, note: note))
+            self.labelNoNotes.isHidden = true
+            self.table.isHidden = false
+            self.table.reloadData()
+        }
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -41,7 +49,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "note") as? NoteViewController else { return }
+        
+        let item = models[indexPath.row]
+        vc.navigationItem.largeTitleDisplayMode = .never
         vc.title = "Note"
+        vc.titleNote = item.title
+        vc.descNote = item.note
         navigationController?.pushViewController(vc, animated: true)
     }
 }
