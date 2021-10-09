@@ -87,9 +87,39 @@
                     <view key="view" contentMode="scaleToFill" id="cVM-zl-QoJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oi1-yO-dpE">
+                                <rect key="frame" x="10" y="54" width="394" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="XgE-lN-YWK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pea-Mz-bHd">
+                                <rect key="frame" x="10" y="126" width="394" height="716"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Ccy-EU-hAh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pea-Mz-bHd" firstAttribute="top" secondItem="Oi1-yO-dpE" secondAttribute="bottom" constant="20" id="NSg-7m-iqr"/>
+                            <constraint firstItem="Oi1-yO-dpE" firstAttribute="top" secondItem="Ccy-EU-hAh" secondAttribute="top" constant="10" id="VFc-Dv-dtU"/>
+                            <constraint firstItem="Ccy-EU-hAh" firstAttribute="bottom" secondItem="pea-Mz-bHd" secondAttribute="bottom" constant="20" id="XE8-PX-gTv"/>
+                            <constraint firstItem="Ccy-EU-hAh" firstAttribute="trailing" secondItem="pea-Mz-bHd" secondAttribute="trailing" constant="10" id="nbI-h9-Jkd"/>
+                            <constraint firstItem="Oi1-yO-dpE" firstAttribute="leading" secondItem="Ccy-EU-hAh" secondAttribute="leading" constant="10" id="qQA-mv-62W"/>
+                            <constraint firstItem="Ccy-EU-hAh" firstAttribute="trailing" secondItem="Oi1-yO-dpE" secondAttribute="trailing" constant="10" id="tog-tk-zNK"/>
+                            <constraint firstItem="pea-Mz-bHd" firstAttribute="leading" secondItem="Ccy-EU-hAh" secondAttribute="leading" constant="10" id="vmi-oM-DXh"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="noteField" destination="pea-Mz-bHd" id="7eR-7v-Zr7"/>
+                        <outlet property="textField" destination="Oi1-yO-dpE" id="aZn-Zq-N6n"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s6q-X7-qoJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -130,6 +160,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
