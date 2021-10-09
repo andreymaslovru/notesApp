@@ -104,13 +104,22 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*Error details of input" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DWD-cD-8mC">
+                                <rect key="frame" x="20" y="116" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemPinkColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ccy-EU-hAh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="DWD-cD-8mC" firstAttribute="top" secondItem="Oi1-yO-dpE" secondAttribute="bottom" constant="10" id="CzP-se-VD2"/>
                             <constraint firstItem="pea-Mz-bHd" firstAttribute="top" secondItem="Oi1-yO-dpE" secondAttribute="bottom" constant="20" id="NSg-7m-iqr"/>
+                            <constraint firstItem="DWD-cD-8mC" firstAttribute="leading" secondItem="Ccy-EU-hAh" secondAttribute="leading" constant="20" id="SS6-WD-zXw"/>
                             <constraint firstItem="Oi1-yO-dpE" firstAttribute="top" secondItem="Ccy-EU-hAh" secondAttribute="top" constant="10" id="VFc-Dv-dtU"/>
                             <constraint firstItem="Ccy-EU-hAh" firstAttribute="bottom" secondItem="pea-Mz-bHd" secondAttribute="bottom" constant="20" id="XE8-PX-gTv"/>
+                            <constraint firstItem="Ccy-EU-hAh" firstAttribute="trailing" secondItem="DWD-cD-8mC" secondAttribute="trailing" constant="20" id="jW5-Kf-atJ"/>
                             <constraint firstItem="Ccy-EU-hAh" firstAttribute="trailing" secondItem="pea-Mz-bHd" secondAttribute="trailing" constant="10" id="nbI-h9-Jkd"/>
                             <constraint firstItem="Oi1-yO-dpE" firstAttribute="leading" secondItem="Ccy-EU-hAh" secondAttribute="leading" constant="10" id="qQA-mv-62W"/>
                             <constraint firstItem="Ccy-EU-hAh" firstAttribute="trailing" secondItem="Oi1-yO-dpE" secondAttribute="trailing" constant="10" id="tog-tk-zNK"/>
@@ -118,6 +127,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="errorHandlerInputLabel" destination="DWD-cD-8mC" id="abV-Si-DOW"/>
                         <outlet property="noteField" destination="pea-Mz-bHd" id="7eR-7v-Zr7"/>
                         <outlet property="textField" destination="Oi1-yO-dpE" id="aZn-Zq-N6n"/>
                     </connections>
@@ -198,6 +208,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

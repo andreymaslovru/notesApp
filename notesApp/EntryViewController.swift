@@ -10,6 +10,7 @@ import UIKit
 class EntryViewController: UIViewController {
     
     @IBOutlet var textField: UITextField!
+    @IBOutlet weak var errorHandlerInputLabel: UILabel!
     @IBOutlet var noteField: UITextView!
     
     public var completion: ((String, String) -> Void)?
@@ -24,10 +25,11 @@ class EntryViewController: UIViewController {
         if let text = textField.text, !text.isEmpty, !noteField.text.isEmpty {
             completion?(text, noteField.text)
         } else {
-            let alertController = UIAlertController(title: "ERROR", message: "Заполните все поля", preferredStyle: .alert)
-            let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-            alertController.addAction(alertAction)
-            present(alertController, animated: true, completion: nil)
+            errorHandlerInputLabel.isHidden = false
+//            let alertController = UIAlertController(title: "ERROR", message: "Заполните все поля", preferredStyle: .alert)
+//            let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+//            alertController.addAction(alertAction)
+//            present(alertController, animated: true, completion: nil)
         }
     }
 }
