@@ -64,7 +64,13 @@
                             <constraint firstItem="Byi-WT-dz5" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="gpE-fH-N5v"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Notes" id="uU3-Te-bb5"/>
+                    <navigationItem key="navigationItem" title="Notes" id="uU3-Te-bb5">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="BQv-QX-4HI">
+                            <connections>
+                                <action selector="didTapeAddItem:" destination="BYZ-38-t0r" id="B7c-wa-LYK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="labelNoNotes" destination="Byi-WT-dz5" id="fvv-9w-mpt"/>
                         <outlet property="table" destination="AJY-g3-Bxg" id="hwy-aW-css"/>

@@ -14,6 +14,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var labelNoNotes: UILabel!
     @IBOutlet weak var table: UITableView!
+    @IBAction func didTapeAddItem(_ sender: Any) {
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: "new") as? EntryViewController else { return }
+        vc.title = "New Note"
+        navigationController?.pushViewController(vc, animated: true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
